@@ -26,6 +26,8 @@ package com.godikit.logger.impl;
 import com.godikit.logger.Logger;
 import com.godikit.logger.utils.LoggerThrowableUtils;
 
+import static com.godikit.logger.utils.LoggerUtils.mergeMsgAndThrowable;
+
 /**
  * @author Len (len782768@gmail.com)
  * @since 2025-11-07 23:22
@@ -34,10 +36,6 @@ public class Slf4jLogbackLoggerImpl implements Logger {
 
     public static final String FACADE = "slf4j";
     public static final String PROVIDER = "logback";
-
-//    static {
-//        LoggerSlf4jUtils.forceJulToSlf4j();
-//    }
 
     private final org.slf4j.Logger FACADE_LOGGER;
 
@@ -91,7 +89,7 @@ public class Slf4jLogbackLoggerImpl implements Logger {
 
     @Override
     public void trace(final Throwable cause, final String msg, final Object... args) {
-
+        FACADE_LOGGER.trace(mergeMsgAndThrowable(msg, cause), args);
     }
 
     @Override
@@ -106,7 +104,7 @@ public class Slf4jLogbackLoggerImpl implements Logger {
 
     @Override
     public void debug(final Throwable cause, final String msg, final Object... args) {
-
+        FACADE_LOGGER.debug(mergeMsgAndThrowable(msg, cause), args);
     }
 
     @Override
@@ -121,7 +119,7 @@ public class Slf4jLogbackLoggerImpl implements Logger {
 
     @Override
     public void info(final Throwable cause, final String msg, final Object... args) {
-
+        FACADE_LOGGER.info(mergeMsgAndThrowable(msg, cause), args);
     }
 
     @Override
@@ -136,7 +134,7 @@ public class Slf4jLogbackLoggerImpl implements Logger {
 
     @Override
     public void warn(final Throwable cause, final String msg, final Object... args) {
-
+        FACADE_LOGGER.warn(mergeMsgAndThrowable(msg, cause), args);
     }
 
     @Override
@@ -151,7 +149,7 @@ public class Slf4jLogbackLoggerImpl implements Logger {
 
     @Override
     public void error(final Throwable cause, final String msg, final Object... args) {
-
+        FACADE_LOGGER.error(mergeMsgAndThrowable(msg, cause), args);
     }
 
     @Override
