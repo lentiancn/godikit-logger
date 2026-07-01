@@ -1,5 +1,11 @@
 # godikit-logger
 
+[![License](https://img.shields.io/github/license/lentiancn/godikit-logger-java.svg)](LICENSE)
+[![Codecov](https://img.shields.io/codecov/c/github/lentiancn/godikit-logger-java.svg)](https://codecov.io/gh/lentiancn/godikit-logger-java)
+[![GitHub Release](https://img.shields.io/github/tag/lentiancn/godikit-logger-java.svg?label=release)](https://github.com/lentiancn/godikit-logger-java/releases)
+
+English
+
 ## Features
 
 - Unified Logger facade for Java 17+
@@ -11,12 +17,12 @@
 
 ## Modules
 
-| Module | Purpose |
-|--------|--------|
-| `godikit-logger` | Core API (Logger + LoggerFactory) |
-| `godikit-logger-with-slf4j-log4j2` | Log4j2 backend via SLF4J |
-| `godikit-logger-with-slf4j-log4j2-config` | Log4j2 default config (colored console) |
-| `godikit-logger-with-slf4j-logback` | Logback backend via SLF4J |
+| Module                                     | Purpose                                  |
+|--------------------------------------------|------------------------------------------|
+| `godikit-logger`                           | Core API (Logger + LoggerFactory)        |
+| `godikit-logger-with-slf4j-log4j2`         | Log4j2 backend via SLF4J                 |
+| `godikit-logger-with-slf4j-log4j2-config`  | Log4j2 default config (colored console)  |
+| `godikit-logger-with-slf4j-logback`        | Logback backend via SLF4J                |
 | `godikit-logger-with-slf4j-logback-config` | Logback default config (colored console) |
 
 ## Supported Backends
@@ -32,30 +38,33 @@
 ### Maven (Core)
 
 ```xml
+
 <dependency>
-  <groupId>com.godikit.logger</groupId>
-  <artifactId>godikit-logger</artifactId>
-  <version>1.0.0-jdk17</version>
+    <groupId>com.godikit.logger</groupId>
+    <artifactId>godikit-logger</artifactId>
+    <version>1.0.0-jdk17</version>
 </dependency>
 ```
 
 ### With Log4j2
 
 ```xml
+
 <dependency>
-  <groupId>com.godikit.logger</groupId>
-  <artifactId>godikit-logger-with-slf4j-log4j2</artifactId>
-  <version>1.0.0-jdk17</version>
+    <groupId>com.godikit.logger</groupId>
+    <artifactId>godikit-logger-with-slf4j-log4j2</artifactId>
+    <version>1.0.0-jdk17</version>
 </dependency>
 ```
 
 ### With Logback
 
 ```xml
+
 <dependency>
-  <groupId>com.godikit.logger</groupId>
-  <artifactId>godikit-logger-with-slf4j-logback</artifactId>
-  <version>1.0.0-jdk17</version>
+    <groupId>com.godikit.logger</groupId>
+    <artifactId>godikit-logger-with-slf4j-logback</artifactId>
+    <version>1.0.0-jdk17</version>
 </dependency>
 ```
 
@@ -64,14 +73,24 @@
 ```java
 Logger logger = LoggerFactory.getLogger(MyClass.class);
 
-logger.info("Started at {}", LocalDateTime.now());
-logger.debug("Request: {}", requestId);
-logger.warn("Usage high: {}%", usage);
+logger.
 
-logger.error(cause, "Failed: {}", requestId);
+info("Started at {}",LocalDateTime.now());
+        logger.
+
+debug("Request: {}",requestId);
+logger.
+
+warn("Usage high: {}%",usage);
+
+logger.
+
+error(cause, "Failed: {}",requestId);
 
 // switch backend
-LoggerFactory.setProvider("godikit", "logback");
+LoggerFactory.
+
+setProvider("godikit","logback");
 ```
 
 ## Requirements
