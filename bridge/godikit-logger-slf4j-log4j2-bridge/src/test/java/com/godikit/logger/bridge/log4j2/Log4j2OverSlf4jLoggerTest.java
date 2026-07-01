@@ -1,10 +1,6 @@
 package com.godikit.logger.bridge.log4j2;
 
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.Marker;
-import org.apache.logging.log4j.MarkerManager;
+import org.apache.logging.log4j.*;
 import org.junit.jupiter.api.Test;
 
 public class Log4j2OverSlf4jLoggerTest {

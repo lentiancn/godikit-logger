@@ -7,45 +7,31 @@
         <groupId>com.godikit.logger</groupId>
         <artifactId>godikit-logger-parent</artifactId>
         <version>${revision}</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>godikit-logger-with-slf4j-logback</artifactId>
+    <artifactId>godikit-logger-slf4j-osgi-bridge</artifactId>
     <version>${revision}</version>
-    <name>GodiKit Logger with SLF4J Logback</name>
+    <name>GodiKit Logger Bridge OSGi</name>
     <description>
-        GodiKit Logger with SLF4J Logback
+        GodiKit Logger Bridge OSGi
     </description>
     <url>https://www.godikit.com/logger</url>
 
     <dependencies>
         <dependency>
             <groupId>com.godikit.logger</groupId>
-            <artifactId>godikit-logger</artifactId>
+            <artifactId>godikit-logger-with-slf4j-logback</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.godikit.logger</groupId>
-            <artifactId>godikit-logger-with-slf4j-logback-config</artifactId>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.log</artifactId>
         </dependency>
-        <!-- Facade -->
         <dependency>
             <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
+            <artifactId>osgi-over-slf4j</artifactId>
         </dependency>
-        <!-- Provider: ch.qos.logback.classic.spi.LogbackServiceProvider -->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-        </dependency>
-        <!-- OSGi Bridge -->
-        <!--        <dependency>-->
-        <!--            <groupId>org.slf4j</groupId>-->
-        <!--            <artifactId>osgi-over-slf4j</artifactId>-->
-        <!--        </dependency>-->
-        <!-- OSGi Logger API -->
-        <!--        <dependency>-->
-        <!--            <groupId>org.osgi</groupId>-->
-        <!--            <artifactId>org.osgi.service.log</artifactId>-->
-        <!--        </dependency>-->
     </dependencies>
 
     <developers>
