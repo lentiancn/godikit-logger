@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <conversionRule conversionWord="godikitLevelColor"
+                    converterClass="com.godikit.logger.logback.converter.LoggerLevelColorCompositeConverter"
+                    class="com.godikit.logger.logback.converter.LoggerLevelColorCompositeConverter"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%godikitLevelColor([%d{yyyy-MM-dd HH:mm:ss}]) %godikitLevelColor(%-5level) %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="ALL">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
