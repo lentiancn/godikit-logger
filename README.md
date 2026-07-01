@@ -38,7 +38,6 @@ English
 ### Maven (Core)
 
 ```xml
-
 <dependency>
     <groupId>com.godikit.logger</groupId>
     <artifactId>godikit-logger</artifactId>
@@ -49,7 +48,6 @@ English
 ### With Log4j2
 
 ```xml
-
 <dependency>
     <groupId>com.godikit.logger</groupId>
     <artifactId>godikit-logger-with-slf4j-log4j2</artifactId>
@@ -60,7 +58,6 @@ English
 ### With Logback
 
 ```xml
-
 <dependency>
     <groupId>com.godikit.logger</groupId>
     <artifactId>godikit-logger-with-slf4j-logback</artifactId>
@@ -73,24 +70,13 @@ English
 ```java
 Logger logger = LoggerFactory.getLogger(MyClass.class);
 
-logger.
-
-info("Started at {}",LocalDateTime.now());
-        logger.
-
-debug("Request: {}",requestId);
-logger.
-
-warn("Usage high: {}%",usage);
-
-logger.
-
-error(cause, "Failed: {}",requestId);
+logger.info("Started at {}",LocalDateTime.now());
+logger.debug("Request: {}",requestId);
+logger.warn("Usage high: {}%",usage);
+logger.error(cause, "Failed: {}",requestId);
 
 // switch backend
-LoggerFactory.
-
-setProvider("godikit","logback");
+LoggerFactory.setProvider("godikit","logback");
 ```
 
 ## Requirements
@@ -111,4 +97,4 @@ setProvider("godikit","logback");
 ## Links
 
 - Docs: https://www.godikit.com/logger
-- Issues: https://gitee.com/lentiancn/godikit-logger-java/issues
+- Issues: https://github.com/lentiancn/godikit-logger-java/issues
