@@ -24,7 +24,7 @@
 package com.godikit.logger.impl;
 
 import com.godikit.logger.Logger;
-import com.godikit.logger.utils.LoggerSlf4jUtils;
+//import com.godikit.logger.utils.LoggerSlf4jUtils;
 
 /**
  * Logger implementation that delegates to SLF4J with Log4j2 as the underlying provider.
@@ -39,10 +39,6 @@ public class Slf4jLog4j2LoggerImpl implements Logger {
 
     public static final String FACADE = "slf4j";
     public static final String PROVIDER = "log4j2";
-
-    static {
-        LoggerSlf4jUtils.forceJulToSlf4j();
-    }
 
     private final org.slf4j.Logger FACADE_LOGGER;
 

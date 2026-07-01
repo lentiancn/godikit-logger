@@ -24,7 +24,6 @@
 package com.godikit.logger.impl;
 
 import com.godikit.logger.Logger;
-import com.godikit.logger.utils.LoggerSlf4jUtils;
 import com.godikit.logger.utils.LoggerThrowableUtils;
 
 /**
@@ -36,9 +35,9 @@ public class Slf4jLogbackLoggerImpl implements Logger {
     public static final String FACADE = "slf4j";
     public static final String PROVIDER = "logback";
 
-    static {
-        LoggerSlf4jUtils.forceJulToSlf4j();
-    }
+//    static {
+//        LoggerSlf4jUtils.forceJulToSlf4j();
+//    }
 
     private final org.slf4j.Logger FACADE_LOGGER;
 
