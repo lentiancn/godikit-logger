@@ -90,4 +90,19 @@ public class JulToSlf4jLoggerTest {
             julLogger.log(level, "JUL-to-SLF4J isLoggable check passed");
         }
     }
+
+    @Test
+    public void setLevel() {
+        julLogger.setLevel(Level.FINE);
+        julLogger.fine("JUL-to-SLF4J after setting level to FINE");
+        julLogger.setLevel(null);
+    }
+
+    @Test
+    public void getLoggerWithDifferentNames() {
+        Logger loggerA = Logger.getLogger("com.godikit.logger.ClassA");
+        Logger loggerB = Logger.getLogger("com.godikit.logger.ClassB");
+        loggerA.info("JUL-to-SLF4J logger for ClassA");
+        loggerB.info("JUL-to-SLF4J logger for ClassB");
+    }
 }
