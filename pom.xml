@@ -23,6 +23,7 @@
         <maven.compiler.source>${godikit.java.version}</maven.compiler.source>
         <maven.compiler.target>${godikit.java.version}</maven.compiler.target>
         <project.build.sourceEncoding>${godikit.charset}</project.build.sourceEncoding>
+        <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss'Z'</maven.build.timestamp.format>
 
         <log4j2.version>2.26.0</log4j2.version>
         <slf4j.version>2.0.18</slf4j.version>
@@ -259,6 +260,20 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>${maven-jar-plugin.version}</version>
+                    <configuration>
+                        <archive>
+                            <addMavenDescriptor>true</addMavenDescriptor>
+                            <manifest>
+                                <addDefaultEntries>true</addDefaultEntries>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                                <addBuildEnvironmentEntries>true</addBuildEnvironmentEntries>
+                            </manifest>
+                            <manifestEntries>
+                                <Built-Date>${maven.build.timestamp}</Built-Date>
+                            </manifestEntries>
+                        </archive>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
