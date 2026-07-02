@@ -40,7 +40,7 @@ English
 <dependency>
     <groupId>com.godikit.logger</groupId>
     <artifactId>godikit-logger</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
@@ -50,7 +50,7 @@ English
 <dependency>
     <groupId>com.godikit.logger</groupId>
     <artifactId>godikit-logger-with-slf4j-log4j2</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
@@ -60,7 +60,7 @@ English
 <dependency>
     <groupId>com.godikit.logger</groupId>
     <artifactId>godikit-logger-with-slf4j-logback</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
