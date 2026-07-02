@@ -41,9 +41,9 @@ English
 <dependency>
     <groupId>com.godikit.logger</groupId>
     <artifactId>godikit-logger</artifactId>
-    <version>1.0.0-jdk17</version>
+    <version>1.0.1</version>
 </dependency>
-```
+</xml>
 
 ### With Log4j2
 
@@ -51,9 +51,9 @@ English
 <dependency>
     <groupId>com.godikit.logger</groupId>
     <artifactId>godikit-logger-with-slf4j-log4j2</artifactId>
-    <version>1.0.0-jdk17</version>
+    <version>1.0.1</version>
 </dependency>
-```
+</xml>
 
 ### With Logback
 
@@ -61,7 +61,7 @@ English
 <dependency>
     <groupId>com.godikit.logger</groupId>
     <artifactId>godikit-logger-with-slf4j-logback</artifactId>
-    <version>1.0.0-jdk17</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
