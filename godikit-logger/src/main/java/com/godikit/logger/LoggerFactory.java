@@ -169,13 +169,23 @@ public final class LoggerFactory {
                     .getDeclaredConstructor(Object.class);
             constructor.setAccessible(true);
             return constructor.newInstance(delegateLogger);
-        } catch (ClassCastException e) {
-            System.out.println("[GodiKit Logger] No Logger implementation found for: " + delegateLogger.getClass().getName() + ". Using stdout as fallback.");
-            return Logger.SYSTEM_LOGGER;
         } catch (NoSuchMethodException e) {
             System.err.println("[GodiKit Logger] No matching constructor found for: " + delegateLogger.getClass().getName());
             return Logger.NO_OP_LOGGER;
-        } catch (InvocationTargetException | IllegalAccessException | InstantiationException e) {
+        } catch (InvocationTargetException e) {
+            if (e.getTargetException() instanceof ClassCastException) {
+                System.err.println("[GodiKit Logger] No Logger implementation found for: " + delegateLogger.getClass().getName() + ". Using stdout as fallback.");
+                return Logger.SYSTEM_LOGGER;
+            }
+
+            System.err.println("[GodiKit Logger] Failed to create Logger: " + ThrowableUtils.toString(e));
+            return Logger.NO_OP_LOGGER;
+        } catch (Throwable e) {
+            if (e instanceof ClassCastException) {
+                System.err.println("[GodiKit Logger] No Logger implementation found for: " + delegateLogger.getClass().getName() + ". Using stdout as fallback.");
+                return Logger.SYSTEM_LOGGER;
+            }
+
             System.err.println("[GodiKit Logger] Failed to create Logger: " + ThrowableUtils.toString(e));
             return Logger.NO_OP_LOGGER;
         }
